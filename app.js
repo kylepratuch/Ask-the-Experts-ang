@@ -17,5 +17,5 @@ var askExperts = angular.module('askExperts', ['ui.router']);
       templateUrl: "partials/questions.answers.html",
       controller: 'AnswersCtrl'
     });
-    
+
   });

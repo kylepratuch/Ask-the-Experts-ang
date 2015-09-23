@@ -1,0 +1,18 @@
+<!-- Show list of answers ############################-->
+<div ng-show="question.answers.length">
+  <h2>Answers to "{{question.text}}"</h2>
+    <div  class="answerList" ng-repeat="item in question.answers">
+      <a ui-sref="answer({ answerId: item.id })">{{item.text}}</a>
+    </div>
+</div>
+<!-- Show list of answers ############################-->
+
+<div >
+  <h2 ng-show="question">Answer "{{ question.text }}"</h2>
+  <form ng-submit="addAnswer()" class="form-inline" role="form">
+    <div class="form-group">
+      <input type="text" ng-model="answerText" class="form-control" placeholder="Answer the question...">
+    </div>
+    <button type="submit" class="btn btn-default">Answer</button>
+  </form>
+</div>
