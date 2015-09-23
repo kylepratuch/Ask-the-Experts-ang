@@ -2,7 +2,7 @@
 <div ng-show="question.answers.length">
   <h2>Answers to "{{question.text}}"</h2>
     <div  class="answerList" ng-repeat="item in question.answers">
-      <a ui-sref="answer({ answerId: item.id })">{{item.text}}</a>
+      <a ui-sref="answer({ answerId: item.id,questionId: question.id })">{{item.text}} | {{item.upvotes}}</a>
     </div>
 </div>
 <!-- Show list of answers ############################-->
