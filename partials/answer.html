@@ -1,5 +1,9 @@
 <div>
-  <h2>Discussion for: "{{answer.text}}"</h2>
+  <h2>Discussion for: "{{answer.text}}" {{answer.upvotes}}</h2>
+
+  <form ng-submit="addToUpvotes()">
+      <button type="submit">+</button>
+  </form>
 
   <form ng-submit="addCommentToDiscussion()">
     <div class="form-group">
@@ -8,7 +12,7 @@
     <button type="submit">Submit</button>
   </form>
 
-  <div ng-repeat="item in answer.discussion">
+  <div ng-repeat="item in answer.discussion track by $index">
     {{ item }}
   </div>
 

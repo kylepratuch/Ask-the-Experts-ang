@@ -14,10 +14,9 @@ askExperts.controller('AnswersCtrl', function AnswersCtrl($scope, $stateParams, 
 
   $scope.addCommentToDiscussion = function() {
     $scope.answer.discussion.push($scope.comment);
-    console.log($scope.answer.discussion);
   }
 
-  // $scope.addToUpvote = function() {
-  // var thisAnswer = findById($scope.question.answers,)
-  //   }
+  $scope.addToUpvotes = function() {
+    $scope.answer.upvotes += 1;
+  }
 });

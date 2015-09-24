@@ -2,13 +2,16 @@
 <div ng-show="questions.length">
   <h1>Here are all of your questions:</h1>
 
+    <label>Filter out answered questions</label>
+    <input type="checkbox" ng-model="filterAnswers" ng-false-value="" ng-true-value="{{question.answers.length === 0}}" id="filterAnswers">
 
-    <div  class="questions" ng-repeat="item in questions">
+    <div class="questions" ng-repeat="item in questions | filter: filterAnswers">
       <a ui-sref="questions.answers({ questionId: item.id })">{{ item.text }}</a>
+      <p>Answers: {{ item.answers.length }}</p>
     </div>
 
-</div>
 
+</div>
 
 <div class="col-md-4">
   <h3>Ask a new question</h3>
