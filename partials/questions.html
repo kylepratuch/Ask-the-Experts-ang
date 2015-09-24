@@ -2,14 +2,19 @@
 <div ng-show="questions.length">
   <h1>Here are all of your questions:</h1>
 
-    <label>Filter out answered questions</label>
-    <input type="checkbox" ng-model="filterAnswers" ng-false-value="" ng-true-value="{{question.answers.length === 0}}" id="filterAnswers">
+  <label>Search for a question:</label>
+  <input type="text" ng-model="searchText" placeholder="Search...">
 
-    <div class="questions" ng-repeat="item in questions | filter: filterAnswers">
+  <label>Filter out answered questions</label>
+  <!-- <input type="checkbox" toggle-class="toggle-calm" ng-model="filterAnswers.answered" ng-value-true="false" ng-value-false=""> -->
+  <button ng-click="filterAnswers.answered = true">Filter by answered</button>
+  <button ng-click="filterAnswers.answered = false">Filter by unanswered</button>
+  <button ng-click="filterAnswers.answered = ''">Show all</button>
+
+    <div class="questions" ng-repeat="item in questions | filter: searchText | filter: filterAnswers.answered">
       <a ui-sref="questions.answers({ questionId: item.id })">{{ item.text | limitTo:300 }}</a>
       <p>Answers: {{ item.answers.length }}</p>
     </div>
-
 
 </div>
 

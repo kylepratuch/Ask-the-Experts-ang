@@ -1,6 +1,8 @@
 askExperts.controller('AnswersCtrl', function AnswersCtrl($scope, $stateParams, QuestionsFactory, UtilitiesFactory) {
+
   $scope.question = UtilitiesFactory.findById(QuestionsFactory.questions, $stateParams.questionId)
   $scope.answer = UtilitiesFactory.findById($scope.question.answers, $stateParams.answerId)
+
   $scope.addAnswer = function() {
     $scope.question.answers.push(
       { text: $scope.answerText,
@@ -9,6 +11,7 @@ askExperts.controller('AnswersCtrl', function AnswersCtrl($scope, $stateParams, 
         discussion: []
         }
     );
+    $scope.question.answered = true;
     $scope.answerText = null;
   }
 
@@ -17,6 +20,8 @@ askExperts.controller('AnswersCtrl', function AnswersCtrl($scope, $stateParams, 
   }
 
   $scope.addToUpvotes = function() {
+    debugger;
+    console.log($scope.answer);
     $scope.answer.upvotes += 1;
   }
 });
