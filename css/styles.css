@@ -3,5 +3,22 @@
   padding:8px;
   margin:8px;
   border-radius:4px;
+  border-color:#778899;
 
+}
+
+.questions {
+  width:40%;
+  background-color:ghostwhite;
+  float:left;
+}
+
+.answerList {
+  width:60%;
+  background-color:#FFDEAD;
+  float:right;
+}
+
+.row{
+  width:100%;
 }

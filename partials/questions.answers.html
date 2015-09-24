@@ -1,12 +1,13 @@
 <!-- Show list of answers ############################-->
 <div ng-show="question.answers.length">
   <h2>Answers to "{{question.text}}"</h2>
-    <div  class="answerList" ng-repeat="thisAnswer in question.answers | orderBy: '-upvotes'">
-      <a ui-sref="answer({ questionId: question.id,answerId: thisAnswer.id })">{{thisAnswer.text}}</a>
-        <p>upvotes:  {{thisAnswer.upvotes}} comments:  {{thisAnswer.discussion.length}}</p>
-        <form ng-submit="addToUpvotes()">
-            <button type="submit">+</button>
-        </form>
+    <div class="row">
+      <div class="answerList" ng-repeat="thisAnswer in question.answers | orderBy: '-upvotes'">
+        <!-- <a ui-sref="answer({ questionId: question.id,answerId: thisAnswer.id })">{{thisAnswer.text}}</a> -->
+        <a ui-sref="answer({ questionId: question.id,answerId: thisAnswer.id })">{{thisAnswer.text}}</a>
+          <p>upvotes:  {{thisAnswer.upvotes}} comments:  {{thisAnswer.discussion.length}}</p>
+              <!-- <h2 ng-click="addToUpvotes()">upvote!</h2> -->
+        </div>      
     </div>
 </div>
 <!-- Show list of answers ############################-->

@@ -5,17 +5,15 @@
   <label>Search for a question:</label>
   <input type="text" ng-model="searchText" placeholder="Search...">
 
-  <label>Filter out answered questions</label>
-  <!-- <input type="checkbox" toggle-class="toggle-calm" ng-model="filterAnswers.answered" ng-value-true="false" ng-value-false=""> -->
   <button ng-click="filterAnswers.answered = true">Filter by answered</button>
   <button ng-click="filterAnswers.answered = false">Filter by unanswered</button>
   <button ng-click="filterAnswers.answered = ''">Show all</button>
-
+<div class="row">
     <div class="questions" ng-repeat="item in questions | filter: searchText | filter: filterAnswers.answered">
       <a ui-sref="questions.answers({ questionId: item.id })">{{ item.text | limitTo:300 }}</a>
       <p>Answers: {{ item.answers.length }}</p>
     </div>
-
+  </div>
 </div>
 
 <div class="col-md-4">
