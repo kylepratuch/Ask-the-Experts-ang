@@ -6,7 +6,7 @@
     <input type="checkbox" ng-model="filterAnswers" ng-false-value="" ng-true-value="{{question.answers.length === 0}}" id="filterAnswers">
 
     <div class="questions" ng-repeat="item in questions | filter: filterAnswers">
-      <a ui-sref="questions.answers({ questionId: item.id })">{{ item.text }}</a>
+      <a ui-sref="questions.answers({ questionId: item.id })">{{ item.text | limitTo:300 }}</a>
       <p>Answers: {{ item.answers.length }}</p>
     </div>
 
