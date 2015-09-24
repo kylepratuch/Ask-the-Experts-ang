@@ -1,5 +1,18 @@
 <div>
-  <h2 ng-model="">{{item.text}}</h2>
+  <h2>Discussion for: "{{answer.text}}"</h2>
+
+  <form ng-submit="addCommentToDiscussion()">
+    <div class="form-group">
+      <input type="text" ng-model="comment">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div ng-repeat="item in answer.discussion">
+    {{ item }}
+  </div>
+
+  <a ui-sref="questions.answers({ questionId: question.id })">Back to answers</a>
 </div>
 
 <!-- Show answer text at top of page-->

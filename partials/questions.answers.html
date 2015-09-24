@@ -2,12 +2,12 @@
 <div ng-show="question.answers.length">
   <h2>Answers to "{{question.text}}"</h2>
     <div  class="answerList" ng-repeat="item in question.answers">
-      <a ui-sref="answer({ answerId: item.id,questionId: question.id })">{{item.text}} | {{item.upvotes}}</a>
+      <a ui-sref="answer({ questionId: question.id,answerId: item.id })">{{item.text}} | {{item.upvotes}}</a>
     </div>
 </div>
 <!-- Show list of answers ############################-->
 
-<div >
+<div>
   <h2 ng-show="question">Answer "{{ question.text }}"</h2>
   <form ng-submit="addAnswer()" class="form-inline" role="form">
     <div class="form-group">

@@ -19,7 +19,7 @@ var askExperts = angular.module('askExperts', ['ui.router']);
     });
 
     $stateProvider.state('answer', {
-      url:"/:questionId/:answerId",
+      url:":questionId/:answerId",
       templateUrl: "partials/answer.html",
       controller: 'AnswersCtrl'
     });
